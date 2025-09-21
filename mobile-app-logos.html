@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Logos - Vilma Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-hero {
+            padding: 4rem 0;
+            background: var(--bg-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .project-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 4rem 0;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .hero h1 {
+            font-family: var(--font-primary);
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .project-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+        
+        .project-title {
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 900;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+        
+        .project-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            text-align: center;
+        }
+        
+        .meta-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .project-gallery {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 2rem 0;
+        }
+        
+        .gallery-row {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .gallery-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            padding: 1.5rem;
+            flex: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+        
+        .gallery-caption h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-caption p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        
+        .project-details {
+            background: var(--bg-secondary);
+            padding: 6rem 0;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+        
+        .details-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+        
+        .details-content p {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .process-steps {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .process-steps li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+        
+        .process-steps li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary-color);
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .process-steps {
+            counter-reset: step-counter;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 3rem;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+        
+        .back-link:hover {
+            color: var(--primary-color);
+            transform: translateX(-5px);
+        }
+        
+        .back-link::before {
+            content: '←';
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .project-container {
+                padding: 0 2rem;
+            }
+            
+            .project-hero {
+                padding: 120px 0 80px;
+            }
+            
+            .project-header {
+                margin-bottom: 4rem;
+            }
+            
+            .project-gallery {
+                margin: 2rem auto;
+                padding: 1rem 0;
+            }
+            
+            .gallery-row {
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .gallery-item {
+                padding: 1rem;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .project-details {
+                padding: 4rem 0;
+            }
+            
+            .project-meta {
+                gap: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">VILMA</a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Mobile App Logos</h1>
+            <p>A comprehensive collection of hand-drawn mobile app logo concepts exploring diverse themes from fitness challenges to photo editing tools.</p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Category</div>
+                        <div class="meta-value">Brand Identity</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Year</div>
+                        <div class="meta-value">2024</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Tools</div>
+                        <div class="meta-value">Figma, Procreate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="project-gallery">
+        <div class="project-container">
+            <div class="gallery-row">
+                <div class="gallery-item">
+                    <img src="sketches-first.jpg" alt="Initial Hand-Drawn Logo Sketches">
+                    <div class="gallery-caption">
+                        <h3>Initial Sketches</h3>
+                        <p>First round of hand-drawn logo concepts exploring different themes and visual approaches</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="sketches-second.jpg" alt="Refined Hand-Drawn Logo Sketches">
+                    <div class="gallery-caption">
+                        <h3>Refined Sketches</h3>
+                        <p>Second iteration of sketches with improved concepts and systematic exploration</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-row">
+                <div class="gallery-item">
+                    <img src="mobile-app-logos-bw.jpg" alt="Black and White Mobile App Logos Collection">
+                    <div class="gallery-caption">
+                        <h3>Monochrome Collection</h3>
+                        <p>Black and white variations demonstrating versatility and scalability</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="mobile-app-logos-color.jpg" alt="Color Mobile App Logos Collection">
+                    <div class="gallery-caption">
+                        <h3>Color Logo Collection</h3>
+                        <p>Vibrant color variations showcasing diverse app themes and branding approaches</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="project-container">
+            <div class="details-grid">
+                <div class="details-content">
+                    <h3>Project Overview</h3>
+                    <p>
+                        This project explores the systematic approach to mobile app logo design through hand-drawn concepts. 
+                        Each grid represents a different app category, from fitness challenges to photo editing tools, 
+                        demonstrating versatility in typography, iconography, and brand identity development.
+                    </p>
+                    <p>
+                        The collection showcases over 200 unique logo concepts, each carefully crafted to communicate 
+                        specific brand values and user experiences. From bold geometric forms to organic shapes, 
+                        the designs explore the full spectrum of visual communication in mobile app branding.
+                    </p>
+                </div>
+                
+                <div class="details-content">
+                    <h3>Design Process</h3>
+                    <ol class="process-steps">
+                        <li>
+                            <strong>Research & Analysis</strong><br>
+                            Studied successful mobile app logos and identified key design patterns and user expectations.
+                        </li>
+                        <li>
+                            <strong>Concept Development</strong><br>
+                            Created hand-drawn sketches exploring different themes, typography styles, and visual approaches.
+                        </li>
+                        <li>
+                            <strong>Systematic Exploration</strong><br>
+                            Organized concepts into themed grids, allowing for systematic comparison and refinement.
+                        </li>
+                        <li>
+                            <strong>Color & Form Studies</strong><br>
+                            Developed both color and monochrome variations to test scalability and versatility.
+                        </li>
+                        <li>
+                            <strong>Final Refinement</strong><br>
+                            Selected the strongest concepts and refined them for digital implementation.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Project Navigation -->
+    <section class="project-navigation">
+        <div class="project-nav-container">
+            <h3 class="project-nav-title">Explore More Projects</h3>
+            <div class="project-nav-grid">
+                <a href="index.html" class="project-nav-item home-nav">
+                    <span class="nav-item-text">Home</span>
+                </a>
+            </div>
+            <div class="project-nav-grid">
+                <a href="scaly-music-app.html" class="project-nav-item">
+                    <span class="nav-item-text">Scaly Music App</span>
+                </a>
+                <a href="commission-illustrations.html" class="project-nav-item">
+                    <span class="nav-item-text">Commission Illustrations</span>
+                </a>
+                <a href="personal-work.html" class="project-nav-item">
+                    <span class="nav-item-text">Fashion Design</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Vilma. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
